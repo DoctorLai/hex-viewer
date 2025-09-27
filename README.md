@@ -1,4 +1,5 @@
 # Hex Viewer App
+[![Hex Viewer (Built, Lint and Test)](https://github.com/DoctorLai/hex-viewer/actions/workflows/ci.yaml/badge.svg)](https://github.com/DoctorLai/hex-viewer/actions/workflows/ci.yaml)
 A simple React web app that lets you upload or drag & drop any file and view its contents in **hexadecimal and ASCII format**. The project supports **dark mode**, is fully tested with Vitest, and can be easily deployed to GitHub Pages.
 
 <img width="879" height="474" alt="image" src="https://github.com/user-attachments/assets/06192443-c137-4d4b-adff-da564644da21" />
@@ -78,6 +79,9 @@ Contributions are welcome!
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+## Extra Documentation
+AI generated document can be found [here](https://deepwiki.com/DoctorLai/hex-viewer)
 
 ## Acknowledgments
 
