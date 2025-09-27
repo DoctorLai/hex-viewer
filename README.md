@@ -1,6 +1,8 @@
 # Hex Viewer App
 A simple React web app that lets you upload or drag & drop any file and view its contents in **hexadecimal and ASCII format**. The project supports **dark mode**, is fully tested with Vitest, and can be easily deployed to GitHub Pages.
 
+<img width="879" height="474" alt="image" src="https://github.com/user-attachments/assets/06192443-c137-4d4b-adff-da564644da21" />
+
 ## Features
 
 - **Hex Viewer**: Displays the hex bytes of a file alongside their ASCII representation, 16 bytes per row.  
