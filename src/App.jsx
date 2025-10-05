@@ -57,7 +57,10 @@ export default function App() {
         <div className="file-info">
           <p>
             <strong>File:</strong> {fileInfo.name} <br />
-            <strong>Size:</strong> {fileInfo.size} ({fileInfo.size / 1024} KB){" "}
+            <strong>Size:</strong> {fileInfo.size}
+            {fileInfo.size.endsWith("B") && !fileInfo.size.includes("KB") ? (
+              <> ({(parseFloat(fileInfo.size) / 1024).toFixed(2)} KB)</>
+            ) : null}{" "}
             <br />
             <strong>Last Modified:</strong> {fileInfo.lastModified}
           </p>
