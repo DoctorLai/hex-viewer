@@ -47,7 +47,7 @@ export default function App() {
       onDragOver={(e) => e.preventDefault()}
       onDrop={handleDrop}
     >
-      <h1>📂 Simple Hex Viewer</h1>
+      <h1>📂 File Hex Viewer</h1>
 
       <input type="file" onChange={handleUpload} />
 
@@ -57,7 +57,8 @@ export default function App() {
         <div className="file-info">
           <p>
             <strong>File:</strong> {fileInfo.name} <br />
-            <strong>Size:</strong> {fileInfo.size} <br />
+            <strong>Size:</strong> {fileInfo.size} ({fileInfo.size / 1024} KB){" "}
+            <br />
             <strong>Last Modified:</strong> {fileInfo.lastModified}
           </p>
         </div>
