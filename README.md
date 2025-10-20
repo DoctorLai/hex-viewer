@@ -1,5 +1,5 @@
 # Hex Viewer App
-[![Hex Viewer (Built, Lint and Test)](https://github.com/DoctorLai/hex-viewer/actions/workflows/ci.yaml/badge.svg)](https://github.com/DoctorLai/hex-viewer/actions/workflows/ci.yaml)
+[![Hex Viewer (Built, Lint and Test)](https://github.com/DoctorLai/hex-viewer/actions/workflows/ci.yaml/badge.svg)](https://github.com/DoctorLai/hex-viewer/actions/workflows/ci.yaml) [![Run Tests with Coverage](https://github.com/DoctorLai/hex-viewer/actions/workflows/coverage.yaml/badge.svg)](https://github.com/DoctorLai/hex-viewer/actions/workflows/coverage.yaml)
 
 A simple React web app that lets you upload or drag & drop any file and view its contents in **hexadecimal and ASCII format**. The project supports **dark mode**, is fully tested with Vitest, and can be easily deployed to GitHub Pages.
 
@@ -40,10 +40,16 @@ To run the app locally:
 
 4. Run tests:
 ```bash
+    ## or: npm test
     npm run test
 ```
 
-5. Format code:
+5. Test Coverage:
+```bash
+npx vitest run --coverage
+```
+
+6. Format code:
 ```bash
     npm run format     # Check formatting
     npm run format:fix # Automatically fix formatting
