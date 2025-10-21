@@ -24,35 +24,35 @@ To run the app locally:
 
 1. Clone the repository:
 ```bash
-    git clone https://github.com/doctorlai/hex-viewer.git
-    cd hex-viewer
+git clone https://github.com/doctorlai/hex-viewer.git
+cd hex-viewer
 ```
 
 2. Install dependencies:  
 ```bash
-    npm install
+npm install
 ```
 
 3. Start the development server:  
 ```bash
-    npm run dev
+npm run dev
 ```
 
 4. Run tests:
 ```bash
-    ## or: npm test
-    npm run test
+## or: npm test
+npm run test
 ```
 
 5. Test Coverage:
 ```bash
-npx vitest run --coverage
+npm run coverage
 ```
 
 6. Format code:
 ```bash
-    npm run format     # Check formatting
-    npm run format:fix # Automatically fix formatting
+npm run format     # Check formatting
+npm run format:fix # Automatically fix formatting
 ```
 
 6. Open [http://localhost:5173/](http://localhost:5173/) in your browser.
@@ -71,15 +71,15 @@ Contributions are welcome!
 1. Fork the repository.  
 2. Create a feature branch:
 ```bash
-    git checkout -b feature-branch
+git checkout -b feature-branch
 ```
 3. Commit your changes:
 ```bash
-    git commit -am 'Add new feature'
+git commit -am 'Add new feature'
 ```
 4. Push to your fork:
 ```bash
-    git push origin feature-branch
+git push origin feature-branch
 ```
 5. Open a Pull Request.  
 
