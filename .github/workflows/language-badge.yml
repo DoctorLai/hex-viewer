@@ -69,29 +69,30 @@ jobs:
           set -euo pipefail
 
           path=".github/badges/javascript.json"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          repo_url="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          work="$(mktemp -d)"
 
-          if git ls-remote --exit-code --heads origin "${BADGE_BRANCH}" >/dev/null 2>&1; then
-            git fetch origin "${BADGE_BRANCH}"
-            git worktree add /tmp/badge-branch "origin/${BADGE_BRANCH}"
+          # Clone the badges branch if it exists, otherwise start an orphan branch.
+          if git ls-remote --exit-code --heads "${repo_url}" "${BADGE_BRANCH}" >/dev/null 2>&1; then
+            git clone --depth 1 --branch "${BADGE_BRANCH}" "${repo_url}" "${work}"
           else
-            mkdir -p /tmp/badge-branch
-            git -C /tmp/badge-branch init
-            git -C /tmp/badge-branch checkout --orphan "${BADGE_BRANCH}"
-            git -C /tmp/badge-branch remote add origin "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
+            git clone --depth 1 "${repo_url}" "${work}"
+            git -C "${work}" checkout --orphan "${BADGE_BRANCH}"
+            git -C "${work}" rm -rf . >/dev/null 2>&1 || true
           fi
 
-          git -C /tmp/badge-branch remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          # Identity must be configured on the cloned repo, not the workspace repo.
+          git -C "${work}" config user.name "github-actions[bot]"
+          git -C "${work}" config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          mkdir -p "/tmp/badge-branch/$(dirname "${path}")"
-          cp "${path}" "/tmp/badge-branch/${path}"
-          git -C /tmp/badge-branch add "${path}"
+          mkdir -p "${work}/$(dirname "${path}")"
+          cp "${path}" "${work}/${path}"
+          git -C "${work}" add "${path}"
 
-          if git -C /tmp/badge-branch diff --cached --quiet -- "${path}"; then
+          if git -C "${work}" diff --cached --quiet; then
             echo "Badge is up to date; nothing to publish."
             exit 0
           fi
 
-          git -C /tmp/badge-branch commit -m "chore: update JavaScript language badge [skip ci]"
-          git -C /tmp/badge-branch push origin "HEAD:${BADGE_BRANCH}"
+          git -C "${work}" commit -m "chore: update JavaScript language badge [skip ci]"
+          git -C "${work}" push origin "HEAD:${BADGE_BRANCH}"
