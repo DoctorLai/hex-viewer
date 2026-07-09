@@ -1,6 +1,7 @@
 # Hex Viewer App
 
 [![CI](https://github.com/DoctorLai/hex-viewer/actions/workflows/ci.yaml/badge.svg)](https://github.com/DoctorLai/hex-viewer/actions/workflows/ci.yaml)
+[![Coverage](https://github.com/DoctorLai/hex-viewer/actions/workflows/coverage.yaml/badge.svg)](https://github.com/DoctorLai/hex-viewer/actions/workflows/coverage.yaml)
 [![License: MIT](https://img.shields.io/github/license/DoctorLai/hex-viewer)](./LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18-brightgreen?logo=node.js&logoColor=white)](https://nodejs.org)
 [![Code style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?logo=prettier&logoColor=white)](https://prettier.io)
@@ -46,36 +47,36 @@ To run the app locally:
 1. Clone the repository:
 
 ```bash
-    git clone https://github.com/doctorlai/hex-viewer.git
-    cd hex-viewer
+git clone https://github.com/doctorlai/hex-viewer.git
+cd hex-viewer
 ```
 
 2. Install dependencies:
 
 ```bash
-    npm install
+npm install
 ```
 
 3. Start the development server:
 
 ```bash
-    npm run dev
+npm run dev
 ```
 
 4. Run tests:
 
 ```bash
-    npm run test        # Run once
-    npm run coverage    # Run with coverage (enforces minimum thresholds)
+npm run test        # Run once
+npm run coverage    # Run with coverage (enforces minimum thresholds)
 ```
 
 5. Lint & format code:
 
 ```bash
-    npm run lint        # Check for lint errors
-    npm run lint:fix    # Auto-fix lint errors
-    npm run format      # Check formatting
-    npm run format:fix  # Automatically fix formatting
+npm run lint        # Check for lint errors
+npm run lint:fix    # Auto-fix lint errors
+npm run format      # Check formatting
+npm run format:fix  # Automatically fix formatting
 ```
 
 6. Run everything at once (format, lint, coverage, build):
@@ -136,20 +137,20 @@ and our [Code of Conduct](./CODE_OF_CONDUCT.md) before getting started.
 2. Create a feature branch:
 
 ```bash
-    git checkout -b feature-branch
+git checkout -b feature-branch
 ```
 
 3. Make your changes and ensure `npm run check` passes.
 4. Commit your changes:
 
 ```bash
-    git commit -am 'Add new feature'
+git commit -am 'Add new feature'
 ```
 
 5. Push to your fork:
 
 ```bash
-    git push origin feature-branch
+git push origin feature-branch
 ```
 
 6. Open a Pull Request.

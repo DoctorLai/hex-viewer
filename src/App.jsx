@@ -42,6 +42,7 @@ export default function App() {
       setFileInfo({
         name: file.name,
         size: formatFileSize(file.size),
+        sizeInBytes: file.size,
         lastModified: new Date(file.lastModified).toLocaleString(),
       });
       setQuery("");
@@ -136,6 +137,11 @@ export default function App() {
           <p>
             <strong>{t("file")}:</strong> {fileInfo.name} <br />
             <strong>{t("size")}:</strong> {fileInfo.size} <br />
+            <strong>{t("size")} (B):</strong> {fileInfo.sizeInBytes} <br />
+            <strong>{t("size")} (KB):</strong>{" "}
+            {(fileInfo.sizeInBytes / 1024).toFixed(3)} <br />
+            <strong>{t("size")} (MB):</strong>{" "}
+            {(fileInfo.sizeInBytes / 1024 / 1024).toFixed(3)} <br />
             <strong>{t("lastModified")}:</strong> {fileInfo.lastModified}
           </p>
         </div>
