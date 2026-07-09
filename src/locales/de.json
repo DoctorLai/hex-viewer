@@ -1,0 +1,21 @@
+{
+  "appTitle": "Einfacher Hex-Betrachter",
+  "uploadPrompt": "Oder Datei hierher ziehen",
+  "file": "Datei",
+  "size": "Größe",
+  "lastModified": "Zuletzt geändert",
+  "offset": "Offset",
+  "lightMode": "Heller Modus",
+  "darkMode": "Dunkler Modus",
+  "copy": "Hex kopieren",
+  "copied": "Kopiert!",
+  "download": "Herunterladen",
+  "clear": "Löschen",
+  "search": "Hex oder Text suchen…",
+  "noMatches": "Keine Treffer",
+  "language": "Sprache",
+  "madeWith": "Mit ❤️ erstellt von",
+  "openSource": "Open Source auf",
+  "foundUseful": "Wenn dies nützlich war, erwäge",
+  "buyCoffee": "Spendiere mir einen Kaffee ☕"
+}

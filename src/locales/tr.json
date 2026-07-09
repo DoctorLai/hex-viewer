@@ -1,0 +1,21 @@
+{
+  "appTitle": "Basit Hex Görüntüleyici",
+  "uploadPrompt": "Veya bir dosyayı buraya sürükleyip bırakın",
+  "file": "Dosya",
+  "size": "Boyut",
+  "lastModified": "Son Değiştirilme",
+  "offset": "Ofset",
+  "lightMode": "Açık Mod",
+  "darkMode": "Koyu Mod",
+  "copy": "Hex Kopyala",
+  "copied": "Kopyalandı!",
+  "download": "İndir",
+  "clear": "Temizle",
+  "search": "Hex veya metin ara…",
+  "noMatches": "Eşleşme yok",
+  "language": "Dil",
+  "madeWith": "❤️ ile yapıldı",
+  "openSource": "Açık kaynak",
+  "foundUseful": "Faydalı bulduysanız, düşünün",
+  "buyCoffee": "Bana bir kahve ısmarla ☕"
+}

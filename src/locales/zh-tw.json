@@ -1,0 +1,21 @@
+{
+  "appTitle": "簡易十六進位檢視器",
+  "uploadPrompt": "或將檔案拖放到這裡",
+  "file": "檔案",
+  "size": "大小",
+  "lastModified": "最後修改",
+  "offset": "位移",
+  "lightMode": "淺色模式",
+  "darkMode": "深色模式",
+  "copy": "複製十六進位內容",
+  "copied": "已複製！",
+  "download": "下載",
+  "clear": "清除",
+  "search": "搜尋十六進位或文字…",
+  "noMatches": "沒有符合項目",
+  "language": "語言",
+  "madeWith": "由 ❤️ 製作",
+  "openSource": "開源於",
+  "foundUseful": "如果覺得有用，歡迎考慮",
+  "buyCoffee": "請我喝杯咖啡 ☕"
+}

@@ -1,0 +1,21 @@
+{
+  "appTitle": "Visor Hexadecimal Simple",
+  "uploadPrompt": "O arrastra y suelta un archivo aquí",
+  "file": "Archivo",
+  "size": "Tamaño",
+  "lastModified": "Última modificación",
+  "offset": "Desplazamiento",
+  "lightMode": "Modo Claro",
+  "darkMode": "Modo Oscuro",
+  "copy": "Copiar Hex",
+  "copied": "¡Copiado!",
+  "download": "Descargar",
+  "clear": "Limpiar",
+  "search": "Buscar hex o texto…",
+  "noMatches": "Sin coincidencias",
+  "language": "Idioma",
+  "madeWith": "Hecho con ❤️ por",
+  "openSource": "Código abierto en",
+  "foundUseful": "Si te resultó útil, considera",
+  "buyCoffee": "Invítame un café ☕"
+}

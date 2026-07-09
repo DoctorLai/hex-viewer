@@ -17,7 +17,8 @@
   border-collapse: collapse;
   width: 100%;
 }
-.hex-viewer th, .hex-viewer td {
+.hex-viewer th,
+.hex-viewer td {
   padding: 4px 8px;
   border-bottom: 1px solid #444;
 }
@@ -37,7 +38,9 @@ button {
   border-radius: 12px; /* Makes the button rounded */
   cursor: pointer;
   font-size: 16px;
-  transition: background 0.3s, color 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s;
 }
 button:hover {
   background: #555; /* Optional hover effect */
@@ -50,4 +53,65 @@ button:hover {
 .app button {
   background: #eee;
   color: #111;
+}
+
+/* Top toolbar: language selector + theme toggle */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.lang-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.lang-select select {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #888;
+  font-size: 14px;
+  background: #fff;
+  color: #111;
+}
+.app.dark .lang-select select {
+  background: #222;
+  color: #eee;
+  border-color: #555;
+}
+
+/* Action bar: search + copy/download/clear */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 16px 0;
+}
+.actions .search {
+  flex: 1 1 200px;
+  min-width: 160px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #888;
+  font-size: 14px;
+  background: #fff;
+  color: #111;
+}
+.app.dark .actions .search {
+  background: #222;
+  color: #eee;
+  border-color: #555;
+}
+.actions button {
+  padding: 8px 14px;
+  font-size: 14px;
+}
+.no-matches {
+  padding: 12px;
+  color: #888;
+  font-style: italic;
 }

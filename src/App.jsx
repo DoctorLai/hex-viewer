@@ -1,6 +1,12 @@
 import "./App.css";
-import { useState, useEffect } from "react";
-import { parseHexData, formatFileSize } from "./functions";
+import { useState, useEffect, useMemo } from "react";
+import {
+  parseHexData,
+  formatFileSize,
+  formatHexDump,
+  filterRows,
+} from "./functions";
+import { LANGUAGES, getInitialLanguage, getDirection, translate } from "./i18n";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -8,12 +14,26 @@ export default function App() {
     return saved === "true";
   });
 
+  const [lang, setLang] = useState(() => getInitialLanguage());
   const [hexData, setHexData] = useState([]);
   const [fileInfo, setFileInfo] = useState(null);
+  const [query, setQuery] = useState("");
+  const [copied, setCopied] = useState(false);
+
+  const t = (key) => translate(lang, key);
 
   useEffect(() => {
     localStorage.setItem("darkMode", darkMode);
   }, [darkMode]);
+
+  useEffect(() => {
+    localStorage.setItem("language", lang);
+  }, [lang]);
+
+  const filteredData = useMemo(
+    () => filterRows(hexData, query),
+    [hexData, query],
+  );
 
   const handleFile = (file) => {
     const reader = new FileReader();
@@ -24,6 +44,7 @@ export default function App() {
         size: formatFileSize(file.size),
         lastModified: new Date(file.lastModified).toLocaleString(),
       });
+      setQuery("");
     };
     reader.readAsArrayBuffer(file);
   };
@@ -41,59 +62,138 @@ export default function App() {
     }
   };
 
+  const handleCopy = async () => {
+    const text = formatHexDump(hexData);
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      // Clipboard API may be unavailable (e.g. insecure context); ignore.
+    }
+  };
+
+  const handleDownload = () => {
+    const text = formatHexDump(hexData);
+    const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `${fileInfo?.name ?? "hexdump"}.hex.txt`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
+  const handleClear = () => {
+    setHexData([]);
+    setFileInfo(null);
+    setQuery("");
+  };
+
+  const hasData = hexData.length > 0;
+
   return (
     <div
       className={darkMode ? "app dark" : "app"}
+      dir={getDirection(lang)}
       onDragOver={(e) => e.preventDefault()}
       onDrop={handleDrop}
     >
-      <h1>📂 Simple Hex Viewer</h1>
+      <div className="toolbar">
+        <label className="lang-select">
+          🌐{" "}
+          <select
+            aria-label={t("language")}
+            value={lang}
+            onChange={(e) => setLang(e.target.value)}
+          >
+            {LANGUAGES.map((l) => (
+              <option key={l.code} value={l.code}>
+                {l.name}
+              </option>
+            ))}
+          </select>
+        </label>
+        <button
+          type="button"
+          onClick={() => setDarkMode(!darkMode)}
+          aria-pressed={darkMode}
+        >
+          {darkMode ? `🌞 ${t("lightMode")}` : `🌙 ${t("darkMode")}`}
+        </button>
+      </div>
 
-      <input type="file" onChange={handleUpload} />
+      <h1>📂 {t("appTitle")}</h1>
 
-      <div>Or drag & drop a file here</div>
+      <input type="file" aria-label={t("file")} onChange={handleUpload} />
+
+      <div>{t("uploadPrompt")}</div>
 
       {fileInfo && (
         <div className="file-info">
           <p>
-            <strong>File:</strong> {fileInfo.name} <br />
-            <strong>Size:</strong> {fileInfo.size} <br />
-            <strong>Last Modified:</strong> {fileInfo.lastModified}
+            <strong>{t("file")}:</strong> {fileInfo.name} <br />
+            <strong>{t("size")}:</strong> {fileInfo.size} <br />
+            <strong>{t("lastModified")}:</strong> {fileInfo.lastModified}
           </p>
         </div>
       )}
 
-      {hexData.length > 0 && (
-        <div className="hex-viewer">
-          <table>
-            <thead>
-              <tr>
-                <th>Offset</th>
-                <th>Hex</th>
-                <th>ASCII</th>
-              </tr>
-            </thead>
-            <tbody>
-              {hexData.map((row, i) => (
-                <tr key={i}>
-                  <td className="offset">{row.offset}</td>
-                  <td className="hex">{row.hex}</td>
-                  <td className="ascii">{row.ascii}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      {hasData && (
+        <div className="actions">
+          <input
+            type="search"
+            className="search"
+            placeholder={t("search")}
+            aria-label={t("search")}
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <button type="button" onClick={handleCopy}>
+            📋 {copied ? t("copied") : t("copy")}
+          </button>
+          <button type="button" onClick={handleDownload}>
+            💾 {t("download")}
+          </button>
+          <button type="button" onClick={handleClear}>
+            🗑️ {t("clear")}
+          </button>
         </div>
       )}
 
-      <button onClick={() => setDarkMode(!darkMode)}>
-        {darkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}
-      </button>
+      {hasData && (
+        <div className="hex-viewer">
+          {filteredData.length === 0 ? (
+            <p className="no-matches">{t("noMatches")}</p>
+          ) : (
+            <table>
+              <thead>
+                <tr>
+                  <th>{t("offset")}</th>
+                  <th>Hex</th>
+                  <th>ASCII</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredData.map((row) => (
+                  <tr key={row.offset}>
+                    <td className="offset">{row.offset}</td>
+                    <td className="hex">{row.hex}</td>
+                    <td className="ascii">{row.ascii}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+        </div>
+      )}
 
       <footer>
         <div className="footer">
           <p>
-            Made with ❤️ by{" "}
+            {t("madeWith")}{" "}
             <a
               href="https://github.com/doctorlai"
               target="_blank"
@@ -102,7 +202,7 @@ export default function App() {
               @justyy
             </a>
             <br />
-            Open Source at{" "}
+            {t("openSource")}{" "}
             <a
               href="https://github.com/doctorlai/hex-viewer"
               target="_blank"
@@ -111,13 +211,13 @@ export default function App() {
               GitHub
             </a>
             <br />
-            If you found this useful, consider{" "}
+            {t("foundUseful")}{" "}
             <a
-              href="https://justyy.com/out/bmc"
+              href="https://buymeacoffee.com/y0btg5r"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Buy me a coffee ☕
+              {t("buyCoffee")}
             </a>
           </p>
         </div>

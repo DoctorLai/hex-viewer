@@ -1,0 +1,21 @@
+{
+  "appTitle": "シンプルな16進ビューア",
+  "uploadPrompt": "またはファイルをここにドラッグ＆ドロップ",
+  "file": "ファイル",
+  "size": "サイズ",
+  "lastModified": "最終更新",
+  "offset": "オフセット",
+  "lightMode": "ライトモード",
+  "darkMode": "ダークモード",
+  "copy": "16進をコピー",
+  "copied": "コピーしました！",
+  "download": "ダウンロード",
+  "clear": "クリア",
+  "search": "16進またはテキストを検索…",
+  "noMatches": "一致なし",
+  "language": "言語",
+  "madeWith": "❤️ を込めて作成",
+  "openSource": "オープンソース",
+  "foundUseful": "役に立ったら、ぜひ",
+  "buyCoffee": "コーヒーをおごる ☕"
+}

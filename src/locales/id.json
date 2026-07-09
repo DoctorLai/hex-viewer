@@ -1,0 +1,21 @@
+{
+  "appTitle": "Penampil Hex Sederhana",
+  "uploadPrompt": "Atau seret & lepas file di sini",
+  "file": "Berkas",
+  "size": "Ukuran",
+  "lastModified": "Terakhir Diubah",
+  "offset": "Offset",
+  "lightMode": "Mode Terang",
+  "darkMode": "Mode Gelap",
+  "copy": "Salin Hex",
+  "copied": "Tersalin!",
+  "download": "Unduh",
+  "clear": "Hapus",
+  "search": "Cari hex atau teks…",
+  "noMatches": "Tidak ada kecocokan",
+  "language": "Bahasa",
+  "madeWith": "Dibuat dengan ❤️ oleh",
+  "openSource": "Sumber terbuka di",
+  "foundUseful": "Jika ini bermanfaat, pertimbangkan",
+  "buyCoffee": "Belikan saya kopi ☕"
+}

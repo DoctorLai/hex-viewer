@@ -1,0 +1,21 @@
+{
+  "appTitle": "Eenvoudige Hex-viewer",
+  "uploadPrompt": "Of sleep een bestand hierheen",
+  "file": "Bestand",
+  "size": "Grootte",
+  "lastModified": "Laatst gewijzigd",
+  "offset": "Offset",
+  "lightMode": "Lichte Modus",
+  "darkMode": "Donkere Modus",
+  "copy": "Hex kopiëren",
+  "copied": "Gekopieerd!",
+  "download": "Downloaden",
+  "clear": "Wissen",
+  "search": "Zoek hex of tekst…",
+  "noMatches": "Geen resultaten",
+  "language": "Taal",
+  "madeWith": "Gemaakt met ❤️ door",
+  "openSource": "Open source op",
+  "foundUseful": "Als je dit nuttig vond, overweeg dan",
+  "buyCoffee": "Trakteer me op een koffie ☕"
+}

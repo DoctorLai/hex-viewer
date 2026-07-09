@@ -1,0 +1,21 @@
+{
+  "appTitle": "Trình Xem Hex Đơn Giản",
+  "uploadPrompt": "Hoặc kéo và thả tệp vào đây",
+  "file": "Tệp",
+  "size": "Kích thước",
+  "lastModified": "Sửa đổi lần cuối",
+  "offset": "Độ lệch",
+  "lightMode": "Chế độ Sáng",
+  "darkMode": "Chế độ Tối",
+  "copy": "Sao chép Hex",
+  "copied": "Đã sao chép!",
+  "download": "Tải xuống",
+  "clear": "Xóa",
+  "search": "Tìm hex hoặc văn bản…",
+  "noMatches": "Không có kết quả",
+  "language": "Ngôn ngữ",
+  "madeWith": "Được tạo với ❤️ bởi",
+  "openSource": "Mã nguồn mở tại",
+  "foundUseful": "Nếu thấy hữu ích, hãy cân nhắc",
+  "buyCoffee": "Mời tôi một ly cà phê ☕"
+}

@@ -1,0 +1,30 @@
+# Normalize line endings for all text files, checked out with LF.
+* text=auto eol=lf
+
+# Explicitly declare text files
+*.js    text eol=lf
+*.jsx   text eol=lf
+*.mjs   text eol=lf
+*.cjs   text eol=lf
+*.json  text eol=lf
+*.css   text eol=lf
+*.html  text eol=lf
+*.md    text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.svg   text eol=lf
+
+# Declare binary files that should not be modified
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.webp  binary
+*.woff  binary
+*.woff2 binary
+
+# Exclude generated / vendored files from GitHub language statistics and diffs
+package-lock.json linguist-generated=true
+dist/**           linguist-generated=true
+coverage/**       linguist-generated=true

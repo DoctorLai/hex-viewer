@@ -1,0 +1,21 @@
+{
+  "appTitle": "간단한 헥스 뷰어",
+  "uploadPrompt": "또는 여기에 파일을 끌어다 놓으세요",
+  "file": "파일",
+  "size": "크기",
+  "lastModified": "마지막 수정",
+  "offset": "오프셋",
+  "lightMode": "라이트 모드",
+  "darkMode": "다크 모드",
+  "copy": "헥스 복사",
+  "copied": "복사됨!",
+  "download": "다운로드",
+  "clear": "지우기",
+  "search": "헥스 또는 텍스트 검색…",
+  "noMatches": "일치 항목 없음",
+  "language": "언어",
+  "madeWith": "❤️로 제작",
+  "openSource": "오픈 소스",
+  "foundUseful": "유용하셨다면, 고려해 주세요",
+  "buyCoffee": "커피 한 잔 사주기 ☕"
+}

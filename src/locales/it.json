@@ -1,0 +1,21 @@
+{
+  "appTitle": "Visualizzatore Esadecimale Semplice",
+  "uploadPrompt": "Oppure trascina e rilascia un file qui",
+  "file": "File",
+  "size": "Dimensione",
+  "lastModified": "Ultima modifica",
+  "offset": "Offset",
+  "lightMode": "Modalità Chiara",
+  "darkMode": "Modalità Scura",
+  "copy": "Copia Hex",
+  "copied": "Copiato!",
+  "download": "Scarica",
+  "clear": "Cancella",
+  "search": "Cerca hex o testo…",
+  "noMatches": "Nessuna corrispondenza",
+  "language": "Lingua",
+  "madeWith": "Fatto con ❤️ da",
+  "openSource": "Open source su",
+  "foundUseful": "Se lo trovi utile, considera",
+  "buyCoffee": "Offrimi un caffè ☕"
+}
