@@ -2,6 +2,7 @@
 
 [![CI](https://github.com/DoctorLai/hex-viewer/actions/workflows/ci.yaml/badge.svg)](https://github.com/DoctorLai/hex-viewer/actions/workflows/ci.yaml)
 [![Coverage](https://github.com/DoctorLai/hex-viewer/actions/workflows/coverage.yaml/badge.svg)](https://github.com/DoctorLai/hex-viewer/actions/workflows/coverage.yaml)
+[![Deploy](https://github.com/DoctorLai/hex-viewer/actions/workflows/deploy-pages.yaml/badge.svg)](https://github.com/DoctorLai/hex-viewer/actions/workflows/deploy-pages.yaml)
 [![License: MIT](https://img.shields.io/github/license/DoctorLai/hex-viewer)](./LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18-brightgreen?logo=node.js&logoColor=white)](https://nodejs.org)
 [![Code style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?logo=prettier&logoColor=white)](https://prettier.io)
