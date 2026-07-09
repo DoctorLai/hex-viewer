@@ -21,7 +21,7 @@
 
 A simple React web app that lets you upload or drag & drop any file and view its contents in **hexadecimal and ASCII format**. The project is available in **26 languages**, supports **dark mode**, is fully tested with Vitest, and can be easily deployed to GitHub Pages.
 
-<img width="879" height="474" alt="image" src="https://github.com/user-attachments/assets/06192443-c137-4d4b-adff-da564644da21" />
+<img width="1028" height="786" alt="image" src="https://github.com/user-attachments/assets/3cacd4ea-1236-4112-8115-eca506717d34" />
 
 ## Features
 
