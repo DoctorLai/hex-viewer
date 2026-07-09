@@ -61,15 +61,37 @@ jobs:
 
           cat .github/badges/javascript.json
 
-      - name: Commit updated badge
+      - name: Publish updated badge
+        env:
+          BADGE_BRANCH: badges
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
-          if [[ -n "$(git status --porcelain .github/badges/javascript.json)" ]]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add .github/badges/javascript.json
-            git commit -m "chore: update JavaScript language badge [skip ci]"
-            git push
+
+          path=".github/badges/javascript.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git ls-remote --exit-code --heads origin "${BADGE_BRANCH}" >/dev/null 2>&1; then
+            git fetch origin "${BADGE_BRANCH}"
+            git worktree add /tmp/badge-branch "origin/${BADGE_BRANCH}"
           else
-            echo "Badge is up to date; nothing to commit."
+            mkdir -p /tmp/badge-branch
+            git -C /tmp/badge-branch init
+            git -C /tmp/badge-branch checkout --orphan "${BADGE_BRANCH}"
+            git -C /tmp/badge-branch remote add origin "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
           fi
+
+          git -C /tmp/badge-branch remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+          mkdir -p "/tmp/badge-branch/$(dirname "${path}")"
+          cp "${path}" "/tmp/badge-branch/${path}"
+          git -C /tmp/badge-branch add "${path}"
+
+          if git -C /tmp/badge-branch diff --cached --quiet -- "${path}"; then
+            echo "Badge is up to date; nothing to publish."
+            exit 0
+          fi
+
+          git -C /tmp/badge-branch commit -m "chore: update JavaScript language badge [skip ci]"
+          git -C /tmp/badge-branch push origin "HEAD:${BADGE_BRANCH}"

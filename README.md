@@ -6,7 +6,7 @@
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18-brightgreen?logo=node.js&logoColor=white)](https://nodejs.org)
 [![Code style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?logo=prettier&logoColor=white)](https://prettier.io)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
-[![JavaScript](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FDoctorLai%2Fhex-viewer%2Fmain%2F.github%2Fbadges%2Fjavascript.json)](https://github.com/DoctorLai/hex-viewer/search?l=javascript)
+[![JavaScript](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FDoctorLai%2Fhex-viewer%2Fbadges%2F.github%2Fbadges%2Fjavascript.json)](https://github.com/DoctorLai/hex-viewer/search?l=javascript)
 [![Top Language](https://img.shields.io/github/languages/top/DoctorLai/hex-viewer)](https://github.com/DoctorLai/hex-viewer)
 [![Repo Size](https://img.shields.io/github/repo-size/DoctorLai/hex-viewer)](https://github.com/DoctorLai/hex-viewer)
 [![Last Commit](https://img.shields.io/github/last-commit/DoctorLai/hex-viewer)](https://github.com/DoctorLai/hex-viewer/commits/main)
