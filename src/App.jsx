@@ -9,6 +9,7 @@ import {
 import { LANGUAGES, getInitialLanguage, getDirection, translate } from "./i18n";
 
 export default function App() {
+  const appDate = "2026-07-09";
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem("darkMode");
     return saved === "true";
@@ -225,6 +226,8 @@ export default function App() {
             >
               {t("buyCoffee")}
             </a>
+            <br />
+            <small className="app-version">Version: {appDate}</small>
           </p>
         </div>
       </footer>

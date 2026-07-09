@@ -8,6 +8,13 @@
   background: #111;
   color: #eee;
 }
+.app.dark a {
+  color: #ffd84d;
+}
+.app.dark a:hover,
+.app.dark a:focus-visible {
+  color: #fff2a8;
+}
 .hex-viewer {
   margin-top: 20px;
   overflow-x: auto;

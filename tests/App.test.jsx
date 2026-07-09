@@ -27,6 +27,11 @@ test("renders Hex Viewer UI", () => {
   expect(linkElement).to.exist;
 });
 
+test("renders the date-based version in the footer", () => {
+  render(<App />);
+  expect(screen.getByText("Version: 2026-07-09")).toBeInTheDocument();
+});
+
 describe("file loading", () => {
   it("renders hex, ascii and file info after upload", async () => {
     render(<App />);
