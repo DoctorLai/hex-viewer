@@ -1,0 +1,21 @@
+{
+  "appTitle": "Simple Hex Viewer",
+  "uploadPrompt": "Or drag & drop a file here",
+  "file": "File",
+  "size": "Size",
+  "lastModified": "Last Modified",
+  "offset": "Offset",
+  "lightMode": "Light Mode",
+  "darkMode": "Dark Mode",
+  "copy": "Copy Hex Dump",
+  "copied": "Copied!",
+  "download": "Download",
+  "clear": "Clear",
+  "search": "Search hex or text…",
+  "noMatches": "No matches",
+  "language": "Language",
+  "madeWith": "Made with ❤️ by",
+  "openSource": "Open Source at",
+  "foundUseful": "If you found this useful, consider",
+  "buyCoffee": "Buy me a coffee ☕"
+}

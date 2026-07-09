@@ -1,0 +1,75 @@
+name: Language Badge
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - ".github/badges/**"
+  schedule:
+    - cron: "0 3 * * 1" # Weekly on Monday 03:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: language-badge
+  cancel-in-progress: true
+
+jobs:
+  language-badge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compute JavaScript percentage
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          mkdir -p .github/badges
+
+          languages=$(curl -sf \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/languages")
+          echo "Languages: ${languages}"
+
+          pct=$(echo "${languages}" | jq -r '
+            (to_entries | map(.value) | add) as $total
+            | ((.JavaScript // 0) + (.JSX // 0)) as $js
+            | if ($total // 0) == 0 then 0 else ($js / $total * 100) end
+            | (. * 10 | round) / 10
+          ')
+          echo "JavaScript percentage: ${pct}"
+
+          color=$(jq -rn --argjson p "${pct}" '
+            if $p >= 90 then "brightgreen"
+            elif $p >= 70 then "green"
+            elif $p >= 50 then "yellowgreen"
+            elif $p >= 30 then "yellow"
+            else "orange" end')
+
+          jq -n --arg msg "${pct}%" --arg color "${color}" '{
+            schemaVersion: 1,
+            label: "javascript",
+            message: $msg,
+            color: $color
+          }' > .github/badges/javascript.json
+
+          cat .github/badges/javascript.json
+
+      - name: Commit updated badge
+        run: |
+          set -euo pipefail
+          if [[ -n "$(git status --porcelain .github/badges/javascript.json)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add .github/badges/javascript.json
+            git commit -m "chore: update JavaScript language badge [skip ci]"
+            git push
+          else
+            echo "Badge is up to date; nothing to commit."
+          fi

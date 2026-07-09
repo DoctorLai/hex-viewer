@@ -1,0 +1,21 @@
+{
+  "appTitle": "简易十六进制查看器",
+  "uploadPrompt": "或将文件拖放到此处",
+  "file": "文件",
+  "size": "大小",
+  "lastModified": "最后修改",
+  "offset": "偏移量",
+  "lightMode": "浅色模式",
+  "darkMode": "深色模式",
+  "copy": "复制十六进制",
+  "copied": "已复制！",
+  "download": "下载",
+  "clear": "清除",
+  "search": "搜索十六进制或文本…",
+  "noMatches": "无匹配项",
+  "language": "语言",
+  "madeWith": "由 ❤️ 制作",
+  "openSource": "开源于",
+  "foundUseful": "如果觉得有用，请考虑",
+  "buyCoffee": "请我喝杯咖啡 ☕"
+}

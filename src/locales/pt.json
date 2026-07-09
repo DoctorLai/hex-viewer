@@ -1,0 +1,21 @@
+{
+  "appTitle": "Visualizador Hexadecimal Simples",
+  "uploadPrompt": "Ou arraste e solte um arquivo aqui",
+  "file": "Arquivo",
+  "size": "Tamanho",
+  "lastModified": "Última modificação",
+  "offset": "Deslocamento",
+  "lightMode": "Modo Claro",
+  "darkMode": "Modo Escuro",
+  "copy": "Copiar Hex",
+  "copied": "Copiado!",
+  "download": "Baixar",
+  "clear": "Limpar",
+  "search": "Pesquisar hex ou texto…",
+  "noMatches": "Nenhuma correspondência",
+  "language": "Idioma",
+  "madeWith": "Feito com ❤️ por",
+  "openSource": "Código aberto em",
+  "foundUseful": "Se achou útil, considere",
+  "buyCoffee": "Pague-me um café ☕"
+}

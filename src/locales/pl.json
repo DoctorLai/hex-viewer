@@ -1,0 +1,21 @@
+{
+  "appTitle": "Prosta Przeglądarka Hex",
+  "uploadPrompt": "Lub przeciągnij i upuść plik tutaj",
+  "file": "Plik",
+  "size": "Rozmiar",
+  "lastModified": "Ostatnia modyfikacja",
+  "offset": "Przesunięcie",
+  "lightMode": "Tryb Jasny",
+  "darkMode": "Tryb Ciemny",
+  "copy": "Kopiuj Hex",
+  "copied": "Skopiowano!",
+  "download": "Pobierz",
+  "clear": "Wyczyść",
+  "search": "Szukaj hex lub tekstu…",
+  "noMatches": "Brak dopasowań",
+  "language": "Język",
+  "madeWith": "Stworzone z ❤️ przez",
+  "openSource": "Otwarte źródło na",
+  "foundUseful": "Jeśli to było przydatne, rozważ",
+  "buyCoffee": "Postaw mi kawę ☕"
+}

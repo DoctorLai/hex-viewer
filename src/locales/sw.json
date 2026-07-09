@@ -1,0 +1,21 @@
+{
+  "appTitle": "Kionyeshi Hex Rahisi",
+  "uploadPrompt": "Au buruta na uangushe faili hapa",
+  "file": "Faili",
+  "size": "Ukubwa",
+  "lastModified": "Ilibadilishwa Mwisho",
+  "offset": "Nafasi",
+  "lightMode": "Hali Angavu",
+  "darkMode": "Hali Giza",
+  "copy": "Nakili Hex",
+  "copied": "Imenakiliwa!",
+  "download": "Pakua",
+  "clear": "Futa",
+  "search": "Tafuta hex au maandishi…",
+  "noMatches": "Hakuna zinazolingana",
+  "language": "Lugha",
+  "madeWith": "Imetengenezwa kwa ❤️ na",
+  "openSource": "Chanzo huria kwenye",
+  "foundUseful": "Ikiwa hii ilikuwa na manufaa, fikiria",
+  "buyCoffee": "Ninunulie kahawa ☕"
+}

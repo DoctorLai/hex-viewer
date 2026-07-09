@@ -1,0 +1,21 @@
+{
+  "appTitle": "Visionneuse Hexadécimale Simple",
+  "uploadPrompt": "Ou glissez-déposez un fichier ici",
+  "file": "Fichier",
+  "size": "Taille",
+  "lastModified": "Dernière modification",
+  "offset": "Décalage",
+  "lightMode": "Mode Clair",
+  "darkMode": "Mode Sombre",
+  "copy": "Copier l'Hex",
+  "copied": "Copié !",
+  "download": "Télécharger",
+  "clear": "Effacer",
+  "search": "Rechercher hex ou texte…",
+  "noMatches": "Aucun résultat",
+  "language": "Langue",
+  "madeWith": "Fait avec ❤️ par",
+  "openSource": "Open source sur",
+  "foundUseful": "Si cela vous a été utile, pensez à",
+  "buyCoffee": "Offrez-moi un café ☕"
+}
